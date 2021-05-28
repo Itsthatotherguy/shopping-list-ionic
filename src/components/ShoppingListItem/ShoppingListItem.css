@@ -1,0 +1,7 @@
+ion-item.completed {
+  opacity: 0.3;
+}
+
+ion-label.completed {
+  text-decoration: line-through;
+}

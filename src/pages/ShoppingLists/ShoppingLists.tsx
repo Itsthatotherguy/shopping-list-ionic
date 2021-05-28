@@ -1,7 +1,6 @@
 import { FC, useEffect } from "react";
 import { IonItem, IonLabel, IonList, IonNote, IonLoading } from "@ionic/react";
 import Page from "../../components/Page/Page";
-import shoppingListsData from "../../data/ShoppingListsData";
 import { useAppDispatch, useAppSelector } from "../../store";
 import {
   fetchShoppingLists,
@@ -25,13 +24,13 @@ const ShoppingLists: FC = () => {
         {shoppingLists.map((shoppingList) => (
           <IonItem
             key={shoppingList.id}
-            href={`/shopping-lists/${shoppingList.id}`}
+            routerLink={`/shopping-lists/${shoppingList.id}`}
           >
             <IonLabel>
               <h2>{shoppingList.name}</h2>
               <p>{shoppingList.description}</p>
             </IonLabel>
-            <IonNote slot="end">{shoppingList.numItems} items</IonNote>
+            <IonNote slot="end">{shoppingList.items.count} items</IonNote>
           </IonItem>
         ))}
       </IonList>
